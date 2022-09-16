@@ -1,0 +1,36 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5246757661820932 -0.06205490613763504 0.8490374131953685 3.341763209548839
+  position 1.02729412031074 0.3091179986234255 2.450843790854903
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+}
+CardboardBox {
+  translation 0 -0.7 0.1
+  size 0.2 0.1 0.2
+}
+DEF e_puck E-puck {
+  translation 0 -0.9 0
+  name "e_puck"
+  controller "bug2"
+  supervisor TRUE
+}
+Wall {
+  translation 0.15 0.1 0
+  size 0.5 0.1 0.25
+}
+WoodenBox {
+  translation 0 -0.3 0.1
+  size 0.3 0.2 0.2
+}
+CerealBox {
+  translation 0.1 0.5 0.025
+  rotation 0 1 0 -1.5707996938995747
+}
