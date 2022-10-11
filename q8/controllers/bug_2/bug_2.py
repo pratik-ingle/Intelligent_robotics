@@ -1,4 +1,4 @@
-"""Bog2 controller."""
+"""Bog0 controller."""
 
 
 from controller import Robot, Supervisor
@@ -130,7 +130,7 @@ def run_robot(robot, help, goal):
 if __name__ == "__main__":
 
     # my_robot = Robot()
-    goal = (-0.96,-0.96)
+    goal = (0.96,0.96)
     robot = Supervisor()
     help = Helper()
     run_robot(robot, help, goal)

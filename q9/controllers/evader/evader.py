@@ -3,6 +3,11 @@
 
 from controller import Robot, Supervisor
 from helper import Helper
+import sys
+sys.path.append('/Users/pratik/Docs/sem2022-23/IR/q9/controllers/p_v')
+import p_v
+
+# position = (0,0)
 
 def enable_proximity_sensors(robot, time_step):
     # enable ps sensors
@@ -17,14 +22,22 @@ def enable_proximity_sensors(robot, time_step):
         
     return ps
 
+# def get_pos():
+    # global position
+    # return position
+    
     
     
     
 def run_robot(robot, help, goal):
+    
+    global position
+    
     time_step = 32
     max_speed = 6.24
     is_obstacle = False
     epuck = robot.getFromDef('e_puck')
+    epuck_ev = robot.getFromDef('e_puck_ev')  
     start = epuck.getPosition()[:2]
     m_point = start
     
@@ -45,11 +58,13 @@ def run_robot(robot, help, goal):
     # print(epuck)
     # pos = epuck.getField('translation')
   
+    obstacle_seg = [((0, -0.5),(1, -0.5)), ((-1, 0),(0.5, 0)), ((-0.2, 0.5),(1, 0.5))]
     
     while robot.step(time_step) != -1:
-        
+        pos_evader = epuck_ev.getPosition()[:2]
         pos = epuck.getPosition()[:2]
-        
+        # p_v.run_robot.position = pos
+        position = pos
         heading_angle = help.get_heading_angle(epuck.getOrientation())
         desire_angle = help.angel_line_horizontal((pos[0],pos[1]),goal)
 
@@ -117,6 +132,22 @@ def run_robot(robot, help, goal):
             left_motor.setVelocity(left_speed)
             right_motor.setVelocity(right_speed)
             print("agent reached goal")
+            
+        # found or not! 
+        not_found = [True for _ in range(len(obstacle_seg))]
+        for idx, obs_seg in enumerate(obstacle_seg):
+            not_found[idx] = bool(help.check_intersect((pos, pos_evader), obs_seg))
+            
+        if not any(not_found):
+            print("found the evader!! *_*")
+            break
+            
+      
+            break
+    left_speed = -max_speed
+    right_speed = max_speed
+    left_motor.setVelocity(left_speed)
+    right_motor.setVelocity(right_speed)
                 # print('true')
         # print(is_obstacle)
         # print(pos, start, goal)
@@ -124,6 +155,8 @@ def run_robot(robot, help, goal):
         # print(desire_angle,heading_angle, abs(desire_angle - heading_angle))
         # print(help.angel_line_horizontal((pos[0],pos[1]),goal))
         # print(help.get_heading_angle(epuck.getOrientation()))
+        
+        
 
                    
 

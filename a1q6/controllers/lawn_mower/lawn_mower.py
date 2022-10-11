@@ -1,4 +1,4 @@
-"""Bog2 controller."""
+"""Bog0 controller."""
 
 
 from controller import Robot, Supervisor
@@ -16,9 +16,12 @@ def enable_proximity_sensors(robot, time_step):
         ps[i].enable(time_step)
         
     return ps
-
-    
-    
+A = [(-1,-1), (1,-1), (1,-0.5), (-1,-0.5)]
+B = [(1,-0.5), (0.5,-0.5), (-1,-0.25), (0.5,-0.25)]
+C = [(0.5,-0.5), (1,-0.5), (1,0.5), (0.5,0.5)]
+D = [(-1,-0.25), (-0.5,-0.25), (-0.5,0.5), (-1,0.5)]   
+E = [(-0.5,-0.25), (1,-1), (1,-0.5), (-1,-0.5)]
+F = [(-1,-1), (1,-1), (1,-0.5), (-1,-0.5)] 
     
 def run_robot(robot, help, goal):
     time_step = 32
@@ -130,7 +133,7 @@ def run_robot(robot, help, goal):
 if __name__ == "__main__":
 
     # my_robot = Robot()
-    goal = (-0.96,-0.96)
+    goal = (0,0)
     robot = Supervisor()
     help = Helper()
     run_robot(robot, help, goal)
