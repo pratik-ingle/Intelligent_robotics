@@ -1,0 +1,56 @@
+#VRML_SIM R2022a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.27108757002786116 0.8343563621200427 0.4799593632446373 1.1901801082088306
+  position -2.5291097215621305 -1.42686327132591 4.122162763980116
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 4 2
+}
+SolidTorus {
+  translation 0.5 -0.5 0
+  majorRadius 0.1
+  minorRadius 0.05
+}
+DEF e_puck E-puck {
+  translation -1.75 -0.75 0
+  rotation -0.9999999999992263 1.1912594041066063e-06 3.5804564473741644e-07 0.007939003445305029
+  name "e_puck"
+  controller "bug0"
+  supervisor TRUE
+}
+DEF e_puck_p1 E-puck {
+  translation -0.25 -0.5 -0.000685176
+  rotation 0.9995805977819845 0.024065854773495463 -0.016107860560345147 7.793823289811745e-08
+  name "e_puck_p1"
+  controller "carrot_chasing"
+  supervisor TRUE
+}
+DEF e_puck_p2 E-puck {
+  translation 1 -0.5 0
+  rotation 1.0061685427928154e-08 3.828807096627175e-09 -1 0.2617953035101642
+  name "e_puck_ev"
+  controller "carrot_chassing2"
+  supervisor TRUE
+}
+Fountain {
+  translation 0.85 0.5 0
+  height 0.5
+  radius 0.1
+}
+OilBarrel {
+  translation -0.5 0.5 0.25
+  height 0.5
+  radius 0.2
+}
+OilBarrel {
+  translation -0.85 -0.5 0.05
+  name "oil barrel(1)"
+  height 0.1
+  radius 0.1
+}

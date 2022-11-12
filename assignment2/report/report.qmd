@@ -1,0 +1,32 @@
+---
+title: "A Quarto Page Layout Example"
+subtitle: "Inspired by Tufte Handout, Using Quarto"
+date: "`r Sys.Date()`"
+format:
+    pdf: default
+    html: 
+      self-contained: true
+
+
+reference-location: margin
+citation-location: margin
+bibliography: skeleton.bib
+---
+
+# IR : Assignemnt 2  Pratik Ingle | 17188
+
+Purple Robots p1 and p2 are positioned at location p1 = (-0.25,-0.5) and p2 = (1, -0.5) and goal at g1=(-1,0.5) and g2 = (0.85, 0.5) respectively. and path following is done using carrot chasing algorithm with parameters, (k=0.1, u_max = 0.4, v = 0.1, dt=0.01, delta= 0.01, sci=0.5).
+
+Red robot R is using Bug2 algorithm path planing it has start position at (-1.75, -0.75) and goal at (1.9, 0.5) with abstacle avoidance in the left direction from p1, p2 robots using IR sensors. enviornment also has four circular obstacels with various radious located at (-0.5,-0.5), (0.85,0.5), (-0.85,-0.5) and (0.5,-0.5). 
+
+
+::: column-margin
+Code: [Link](https://github.com/pratik-ingle/Intelligent_robotics/blob/main/code/assignment_1/enviornment/controllers/bug0/bug0.py)
+
+video: [Link](https://drive.google.com/file/d/1pOS-4ftvrjePuiY7bGnYwBE67Xgr-w8R/view?usp=sharing)
+:::
+Enviornment: 
+
+![](/Users/pratik/Docs/sem2022-23/IR/assignment2/env.png){fig-align="left" height="150"}
+
+
