@@ -1,0 +1,51 @@
+---
+title: "A Quarto Page Layout Example"
+subtitle: "Inspired by Tufte Handout, Using Quarto"
+date: "`r Sys.Date()`"
+format:
+    pdf: default
+    html: 
+      self-contained: true
+
+
+reference-location: margin
+citation-location: margin
+bibliography: skeleton.bib
+---
+
+# ECS418/618: IR, Final Exam
+## Pratik Ingle | 17188
+
+::: column-margin
+Code: [Link](https://github.com/pratik-ingle/Intelligent-robotics-midterm-/tree/main/final_exam)
+
+video: [Link](https://drive.google.com/file/d/1wuCVSGvwhIVSPdx5vx0WHsZXx9Pm3Hzm/view?usp=sharing)
+
+:::
+
+**Enviornment**: 
+
+![](/Users/pratik/Docs/sem2022-23/IR/final_exam/report/env.png){fig-align="left" height="150"}
+
+**Path**:
+
+![](/Users/pratik/Docs/sem2022-23/IR/final_exam/report/path.png){fig-align="left" height="150"}
+
+Algorithm:
+
+![](/Users/pratik/Docs/sem2022-23/IR/final_exam/report/algo.png){fig-align="left" height="200"}
+
+
+In the current enviornment Fabtino robot is used as its able to match the speed of create but not an instance but in an accelerated way. Taking advantage of accelration of robot we can try to reached a way point in an instance if an obstacle is not present between current locationa and waypoint. If obstacel comes in a certain range of robot then robot change its direction based on state digram above and try to avoid obstacle and again move to waypoint. Although it does not prevent all collisions but it significantly reduce the chances of any, unless obsticles comes from behind the robot with heigher velocity than the maximum velocity possible by the robot. 
+
+**Obstacle detection**:
+Obstacles are detected using supervisors in webot, supervisor returns position and heading direction and speed of an obstacle. In real world we can use lidar with low height since obstacle robots (Create) has low height and all robots in webot with lidar sensor availablity does not provide sutable lidar slot height. Using an EKF (Extended kalman filter) for state estimation we can sense dyanamic obstacels heading angle and speed [1].
+
+**Avoiding moving obstacle**:
+Moving obsticles are avoided by moving in the opposite direction from where an obsticle is detected. It works in similar way to potential field based approach. 
+
+
+
+**Ref**:
+
+[1] Guo, Binghua, Nan Guo, and Zhisong Cen. "Obstacle Avoidance With Dynamic Avoidance Risk Region for Mobile Robots in Dynamic Environments." IEEE Robotics and Automation Letters 7.3 (2022): 5850-5857.
