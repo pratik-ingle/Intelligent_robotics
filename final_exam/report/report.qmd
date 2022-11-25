@@ -17,7 +17,7 @@ bibliography: skeleton.bib
 ## Pratik Ingle | 17188
 
 ::: column-margin
-Code: [Link](https://github.com/pratik-ingle/Intelligent-robotics-midterm-/tree/main/final_exam)
+Code: [Link](https://github.com/pratik-ingle/Intelligent_robotics/tree/main/final_exam)
 
 video: [Link](https://drive.google.com/file/d/1wuCVSGvwhIVSPdx5vx0WHsZXx9Pm3Hzm/view?usp=sharing)
 
